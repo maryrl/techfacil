@@ -41,6 +41,7 @@ Um projeto desenvolvido para oferecer uma experiência digital eficiente, modern
    open index.html  # Ou arraste o arquivo para o navegador
    
    **🔧 Personalização**
+   
 Alterar cores/fontes: Edite as variáveis CSS em assets/css/global.css.
 
 Atualizar conteúdo: Modifique o texto diretamente no index.html ou em assets/js/data.js (se usar dados dinâmicos).
@@ -48,6 +49,7 @@ Atualizar conteúdo: Modifique o texto diretamente no index.html ou em assets/js
 Substituir imagens: Adicione novas imagens em assets/images/ e atualize os caminhos no HTML.
 
 **🤝 Contribuição**
+
 Contribuições são bem-vindas! Siga os passos:
 
 Faça um fork do projeto.
@@ -61,4 +63,5 @@ Faça um push para a branch (git push origin feature/nova-feature).
 Abra um Pull Request.
 
 **📄 Licença**
+
 Este projeto está sob a licença MIT (ou outra de sua escolha).
