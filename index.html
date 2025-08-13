@@ -436,12 +436,12 @@
                 <div class="testimonial-card rounded-xl shadow-lg p-8">
                     <div class="flex items-center mb-6">
                         <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-4">
-                            <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <img src="/midias/logo-igor.jpg" alt="Igor Ferreira" >
                                 <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
                             </svg>
                         </div>
                         <div>
-                            <h4 class="text-lg font-bold text-gray-800">Igor Ferreira Fotográfo</h4>
+                            <h4 class="text-lg font-bold text-gray-800">Igor Ferreira Fotógrafo</h4>
                             <p class="text-gray-600">Portfólio Profissional de Fotografia</p>
                         </div>
                     </div>
@@ -558,11 +558,7 @@
         Estamos prontos para transformar suas ideias em soluções digitais de sucesso
       </p>
     </div>
-
-    <!-- GRID COM 2 COLUNAS -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-
-      <!-- Coluna 1: Formulário -->
       <div>
         <form id="contact-form" class="space-y-6">
           <div>
@@ -599,6 +595,14 @@
               <option value="Solução Personalizada">Solução Personalizada</option>
             </select>
           </div>
+          <div>
+  <label for="extras" class="block text-gray-700 font-medium mb-2">Serviços Extras</label>
+  <div>
+    <label><input type="checkbox" name="extras" value="SEO Otimizado"> SEO Otimizado (+R$ 100)</label><br>
+    <label><input type="checkbox" name="extras" value="Suporte Premium"> Suporte Premium (+R$ 300)</label><br>
+    <label><input type="checkbox" name="extras" value="Integração com API"> Integração com API (+R$ 500)</label>
+  </div>
+</div>
 
           <div>
             <label for="message" class="block text-gray-700 font-medium mb-2">Mensagem</label>
@@ -616,7 +620,61 @@
         </form>
       </div>
 
-      <!-- Coluna 2: Informações de Contato -->
+      <script>
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const nome = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const telefone = document.getElementById('phone').value.trim();
+    const servico = document.getElementById('service').value.trim();
+    const mensagem = document.getElementById('message').value.trim();
+
+    // Número do WhatsApp no formato internacional
+    const numeroWhatsApp = "5588921498702"; // 55 + DDD + número, sem espaços ou traços
+
+    // Número do pedido aleatório
+    const numeroPedido = Math.floor(100000 + Math.random() * 900000);
+
+    // Valor total simulado
+    const valorTotal = (Math.random() * (200 - 50) + 50).toFixed(2).replace('.', ',');
+
+    // Tempo estimado fictício
+    const tempoEntrega = Math.floor(Math.random() * (60 - 20) + 20);
+
+    // Mensagem estilo iFood
+    const texto = 
+`🧾 *Comprovante de Pedido - #${numeroPedido}*  
+----------------------------------  
+👤 *Cliente:* ${nome}  
+📧 *E-mail:* ${email}  
+📱 *Telefone:* ${telefone}  
+
+🍽️ *Serviço Solicitado:* ${servico}  
+
+💬 *Observações:*  
+${mensagem}  
+
+----------------------------------  
+🕒 Data/Hora: ${new Date().toLocaleString('pt-BR')}  
+💳 Forma de Pagamento: Cartão de Crédito  
+💰 Total: R$ ${valorTotal}  
+🚚 Taxa de Entrega: Grátis  
+⏱️ Tempo Estimado: ${tempoEntrega} min  
+📦 Status: *Aguardando Confirmação*  
+----------------------------------  
+✅ Obrigado por escolher nossos serviços!`;
+
+    // Montar a URL do WhatsApp
+    const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(texto)}`;
+
+    // Abrir WhatsApp em nova aba
+    window.open(url, '_blank');
+});
+</script>
+
+
+
       <div class="bg-gray-50 rounded-xl p-8 h-full">
         <h3 class="text-2xl font-bold text-gray-800 mb-6">Informações de Contato</h3>
 
@@ -672,27 +730,6 @@
     </div>
   </div>
 </section>
-
-<script>
-document.getElementById('contact-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const nome = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const telefone = document.getElementById('phone').value.trim();
-    const servico = document.getElementById('service').value.trim();
-    const mensagem = document.getElementById('message').value.trim();
-    const numeroWhatsApp = "5588921498702";
-    const texto = `Olá, meu nome é ${nome}.
-Email: ${email}
-Telefone: ${telefone}
-Serviço de interesse: ${servico}
-Mensagem: ${mensagem}`;
-    const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(texto)}`;
-    window.open(url, '_blank');
-});
-</script>
-
-
     <footer class="bg-gray-800 text-white py-12">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -808,8 +845,11 @@ Mensagem: ${mensagem}`;
 
 <script>
 
+
+
 (function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'962d8f59376127e9',t:'MTc1MzEzMDkxNS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();
 
 </script>
+
 </body>
 </html>
